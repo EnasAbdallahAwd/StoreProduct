@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="ListOfOroductCollectionViewCell" customModule="StoreProject" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="141" height="184"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="141" height="184"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KHB-hE-jXl">
+                        <rect key="frame" x="0.0" y="0.0" width="141" height="184"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="3d867c34-dc71-4e05-a166-83797b006ec71613473995838-Nike-Men-White-AIR-ZOOM-VOMERO-15-Running-Shoes-415161347399-1" translatesAutoresizingMaskIntoConstraints="NO" id="dtv-cY-MSf">
+                                <rect key="frame" x="5" y="5" width="131" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="mWT-gw-2ef"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="b1P-fZ-krL">
+                                <rect key="frame" x="5" y="108.5" width="131" height="65.5"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="1wb-Wb-edY">
+                                        <rect key="frame" x="0.0" y="0.0" width="131" height="16.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Nike Dunk Low" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tya-fn-En2">
+                                                <rect key="frame" x="0.0" y="0.0" width="101.5" height="16.5"/>
+                                                <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="13"/>
+                                                <color key="textColor" red="0.24313725489999999" green="0.2470588235" blue="0.40784313729999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$30" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="91O-rm-Ph0">
+                                                <rect key="frame" x="107.5" y="0.0" width="23.5" height="16.5"/>
+                                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="14"/>
+                                                <color key="textColor" name="SGreenColors"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6AG-R4-JeF">
+                                        <rect key="frame" x="0.0" y="22.5" width="131" height="43"/>
+                                        <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="10"/>
+                                        <color key="textColor" name="SDarkGrayColors"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="dtv-cY-MSf" secondAttribute="trailing" constant="5" id="1iY-1O-ZaW"/>
+                            <constraint firstItem="dtv-cY-MSf" firstAttribute="top" secondItem="KHB-hE-jXl" secondAttribute="top" constant="5" id="3fC-tT-uQw"/>
+                            <constraint firstItem="dtv-cY-MSf" firstAttribute="leading" secondItem="KHB-hE-jXl" secondAttribute="leading" constant="5" id="C3o-EL-qIE"/>
+                            <constraint firstItem="b1P-fZ-krL" firstAttribute="top" secondItem="dtv-cY-MSf" secondAttribute="bottom" constant="3.5" id="EPE-hx-Cwc"/>
+                            <constraint firstAttribute="trailing" secondItem="b1P-fZ-krL" secondAttribute="trailing" constant="5" id="Xnr-u5-jJa"/>
+                            <constraint firstAttribute="bottom" secondItem="b1P-fZ-krL" secondAttribute="bottom" constant="10" id="YRJ-hx-fn3"/>
+                            <constraint firstItem="b1P-fZ-krL" firstAttribute="leading" secondItem="KHB-hE-jXl" secondAttribute="leading" constant="5" id="dNl-qT-4Kd"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="KHB-hE-jXl" secondAttribute="bottom" id="TLa-FM-IHz"/>
+                <constraint firstItem="KHB-hE-jXl" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="cTt-hm-cEO"/>
+                <constraint firstItem="KHB-hE-jXl" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="m16-Aa-9AZ"/>
+                <constraint firstAttribute="trailing" secondItem="KHB-hE-jXl" secondAttribute="trailing" id="u5J-wa-3fw"/>
+            </constraints>
+            <size key="customSize" width="141" height="184"/>
+            <connections>
+                <outlet property="productDescriptionLabel" destination="6AG-R4-JeF" id="kYI-Zl-9SZ"/>
+                <outlet property="productImageView" destination="dtv-cY-MSf" id="yI3-P8-8JH"/>
+                <outlet property="productNameLabel" destination="tya-fn-En2" id="Eni-Qp-iiE"/>
+                <outlet property="productPriceLabel" destination="91O-rm-Ph0" id="nWH-bb-fjs"/>
+            </connections>
+            <point key="canvasLocation" x="277.536231884058" y="77.008928571428569"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="3d867c34-dc71-4e05-a166-83797b006ec71613473995838-Nike-Men-White-AIR-ZOOM-VOMERO-15-Running-Shoes-415161347399-1" width="154" height="115"/>
+        <namedColor name="SDarkGrayColors">
+            <color red="0.54117647058823526" green="0.59607843137254901" blue="0.72941176470588232" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="SGreenColors">
+            <color red="0.29803921568627451" green="0.85098039215686272" blue="0.39215686274509803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
