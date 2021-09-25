@@ -11,19 +11,22 @@ class StoreProductsViewController: UIViewController {
    
     @IBOutlet weak var tableView: UITableView!
 
-    var presenter: StoreProductPresenter!
+    var presenter: StoreProductPresenter?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
         presenter = StoreProductPresenter(view: self)
-        presenter.viewDidLoad()
 
     }
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: true)
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        
+        presenter?.viewDidLoad()
 
     }
 
@@ -56,12 +59,11 @@ extension StoreProductsViewController: UITableViewDataSource, UITableViewDelegat
         let cell = tableView.dequeueReusableCell(forIndexPath: indexPath) as StoreProductMainTableViewCell
       
         cell.addProductAction = {
-            self.navigationController?.pushViewController(Storyboard.Main.viewController(AddProductViewController.self), animated: true)
+            self.ShowAddNewProductScreen()
         }
         
         cell.filterProductAction = {
-            let filterProductsViewController = Storyboard.Main.viewController(FilterProductsViewController.self)
-            self.navigationController?.pushViewController(filterProductsViewController, animated: true)
+            self.ShowFilterProductScreen()
         }
         
         return cell
@@ -71,18 +73,14 @@ extension StoreProductsViewController: UITableViewDataSource, UITableViewDelegat
         let cell = tableView.dequeueReusableCell(forIndexPath: indexPath) as ListOfProductTableViewCell
         let dataSource = ListOfProductDataSource()
         cell.listOfProductDataSource = dataSource
-        dataSource.didSelectProduct = { [weak self]  in
-            let productDetailsViewController = Storyboard.Main.viewController(ProductDetailsViewController.self)
-            self?.navigationController?.pushViewController(productDetailsViewController, animated: true)
-            
-        }
+        dataSource.presenter = presenter
         return cell
     }
     
     
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return indexPath.section == 0 ? 195 : CGFloat((self.presenter.getProductsListCount() + 3) / 2 * 170)
+        return indexPath.section == 0 ? 195 : CGFloat((self.presenter?.getProductsListCount() ?? 0 + 2) / 2 * 170)
     }
     
 }

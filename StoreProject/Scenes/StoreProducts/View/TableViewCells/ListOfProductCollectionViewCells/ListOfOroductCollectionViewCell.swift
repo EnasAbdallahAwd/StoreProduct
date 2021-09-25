@@ -18,5 +18,17 @@ class ListOfOroductCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
     }
+    
+    func displayproductName(name: String) {
+        productNameLabel.text = name
+    }
+    
+    func displayProductDescription(description: String) {
+        productDescriptionLabel.text = description
+    }
+    
+    func displayproductPrice(Price: String) {
+        productPriceLabel.text = Price
+    }
 
 }

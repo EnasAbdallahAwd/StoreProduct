@@ -257,7 +257,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="55" id="mCK-OX-XG5"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="25"/>
+                                                <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="20"/>
                                                 <state key="normal" title="Delete">
                                                     <color key="titleColor" name="SRedColors"/>
                                                 </state>
@@ -276,7 +276,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="55" id="skS-fc-cYS"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="21"/>
+                                                <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="20"/>
                                                 <state key="normal" title="Edit Product">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
@@ -313,10 +313,11 @@
                         <constraints>
                             <constraint firstItem="KBo-lt-XFa" firstAttribute="leading" secondItem="DpA-RN-ZYf" secondAttribute="leading" id="CYJ-P5-iHs"/>
                             <constraint firstItem="KBo-lt-XFa" firstAttribute="trailing" secondItem="DpA-RN-ZYf" secondAttribute="trailing" id="P2t-Y8-yYH"/>
-                            <constraint firstItem="KBo-lt-XFa" firstAttribute="bottom" secondItem="DpA-RN-ZYf" secondAttribute="bottom" id="ecq-Tj-LHP"/>
+                            <constraint firstItem="KBo-lt-XFa" firstAttribute="bottom" secondItem="8V2-DT-N6O" secondAttribute="bottom" id="ecq-Tj-LHP"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="mainView" destination="KBo-lt-XFa" id="Wga-GK-VSt"/>
                         <outlet property="productDescriptionLabel" destination="via-tY-sP8" id="bg8-4g-Xvy"/>
                         <outlet property="productImageView" destination="hTM-Wg-q34" id="1nq-xO-LlS"/>
                         <outlet property="productNameLabel" destination="7xN-ef-ara" id="dj5-4S-bKk"/>
@@ -336,27 +337,51 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RIg-CN-pbb">
-                                <rect key="frame" x="0.0" y="317" width="375" height="350"/>
+                                <rect key="frame" x="0.0" y="267" width="375" height="400"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ubz-rd-uIn">
-                                        <rect key="frame" x="20" y="274" width="335" height="55"/>
-                                        <color key="backgroundColor" name="SBlueColor"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="55" id="QhN-IZ-SfK"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="21"/>
-                                        <state key="normal" title="Edit Product">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="28"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="editProductButtonWasPressed:" destination="obl-gr-3sb" eventType="touchUpInside" id="ytC-Ra-Fbn"/>
-                                        </connections>
-                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="GBH-nQ-rUn">
+                                        <rect key="frame" x="20" y="274" width="335" height="118"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ubz-rd-uIn">
+                                                <rect key="frame" x="0.0" y="0.0" width="335" height="55"/>
+                                                <color key="backgroundColor" name="SBlueColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="55" id="QhN-IZ-SfK"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="21"/>
+                                                <state key="normal" title="Filter">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="28"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="filterProductButtonWasPressed:" destination="obl-gr-3sb" eventType="touchUpInside" id="cQX-vX-CKb"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wEb-V7-AYC">
+                                                <rect key="frame" x="0.0" y="63" width="335" height="55"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="55" id="Pfj-3j-mTN"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="21"/>
+                                                <state key="normal" title="Reset">
+                                                    <color key="titleColor" name="SBlueColor"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="28"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="resetProductButtonWasPressed:" destination="obl-gr-3sb" eventType="touchUpInside" id="Oew-Rf-dUc"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Filter" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5m4-Pe-6jM">
                                         <rect key="frame" x="153.5" y="40" width="68.5" height="36.5"/>
                                         <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="31"/>
@@ -446,15 +471,16 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="ubz-rd-uIn" secondAttribute="trailing" constant="20" id="6ZW-Xh-wt8"/>
+                                    <constraint firstAttribute="trailing" secondItem="GBH-nQ-rUn" secondAttribute="trailing" constant="20" id="39x-WP-OWa"/>
                                     <constraint firstItem="5m4-Pe-6jM" firstAttribute="top" secondItem="RIg-CN-pbb" secondAttribute="top" constant="40" id="E7a-NR-eET"/>
                                     <constraint firstItem="vp7-Z8-Q6r" firstAttribute="leading" secondItem="RIg-CN-pbb" secondAttribute="leading" constant="20" id="HEy-Yp-CVm"/>
                                     <constraint firstItem="5m4-Pe-6jM" firstAttribute="centerX" secondItem="RIg-CN-pbb" secondAttribute="centerX" id="K9U-xw-EA3"/>
-                                    <constraint firstAttribute="height" constant="350" id="Mhy-Us-tte"/>
+                                    <constraint firstAttribute="height" constant="400" id="Mhy-Us-tte"/>
                                     <constraint firstAttribute="trailing" secondItem="vp7-Z8-Q6r" secondAttribute="trailing" constant="20" id="Rgz-OY-fzR"/>
-                                    <constraint firstItem="ubz-rd-uIn" firstAttribute="leading" secondItem="RIg-CN-pbb" secondAttribute="leading" constant="20" id="SjY-vy-7jp"/>
+                                    <constraint firstAttribute="bottom" secondItem="GBH-nQ-rUn" secondAttribute="bottom" constant="8" id="YLK-0B-gw4"/>
+                                    <constraint firstItem="GBH-nQ-rUn" firstAttribute="leading" secondItem="RIg-CN-pbb" secondAttribute="leading" constant="20" id="f3d-O0-HM8"/>
                                     <constraint firstItem="vp7-Z8-Q6r" firstAttribute="top" secondItem="5m4-Pe-6jM" secondAttribute="bottom" constant="30" id="j1I-nT-wWW"/>
-                                    <constraint firstItem="ubz-rd-uIn" firstAttribute="top" secondItem="vp7-Z8-Q6r" secondAttribute="bottom" constant="40" id="nRO-Aw-My4"/>
+                                    <constraint firstItem="GBH-nQ-rUn" firstAttribute="top" secondItem="vp7-Z8-Q6r" secondAttribute="bottom" constant="40" id="mQA-pe-uNX"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -463,9 +489,12 @@
                         <constraints>
                             <constraint firstItem="RIg-CN-pbb" firstAttribute="trailing" secondItem="r73-f5-PrY" secondAttribute="trailing" id="3qd-sq-z3d"/>
                             <constraint firstItem="RIg-CN-pbb" firstAttribute="leading" secondItem="r73-f5-PrY" secondAttribute="leading" id="4co-1u-C1n"/>
-                            <constraint firstItem="RIg-CN-pbb" firstAttribute="bottom" secondItem="r73-f5-PrY" secondAttribute="bottom" id="sXY-Km-2TS"/>
+                            <constraint firstItem="RIg-CN-pbb" firstAttribute="bottom" secondItem="MqJ-Cu-ZeR" secondAttribute="bottom" id="sXY-Km-2TS"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="mainView" destination="RIg-CN-pbb" id="KMK-Gl-vRb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sPF-eN-mmZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

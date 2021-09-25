@@ -5,13 +5,14 @@
 //  Created by Enas Abdallah on 24/09/2021.
 //
 
-import Foundation
 import RealmSwift
 
-protocol StoreView: class {
+protocol StoreView: AnyObject {
     func fetchingDataSuccess()
-//    func showError(error: String)
-//    func navigateToUserDetailsScreen(user: User)
+    func presentProductDetailsScreen(product: Product)
+    func ShowAddNewProductScreen()
+    func ShowFilterProductScreen()
+
 }
 
 protocol productCellView {
@@ -24,7 +25,6 @@ class StoreProductPresenter {
     
     private weak var view: StoreView?
     var notificationToken : NotificationToken?
-    var productList : Results<Product>!
 
     
     init(view: StoreView) {
@@ -36,22 +36,35 @@ class StoreProductPresenter {
     }
     
     func getProductsList() {
-        let realm = RealmService.shared.realm
-         productList = realm.objects(Product.self)
-        notificationToken = realm.observe({ notification, realm in
-            self.view?.fetchingDataSuccess()
-        })
-
+        self.view?.fetchingDataSuccess()
+        print(RealmService.shared.getDataFromDB())
     }
     
     func getProductsListCount() -> Int {
-        return productList.count
+        return RealmService.shared.getDataFromDB().count
     }
     
+    
+    func configure(cell: ListOfOroductCollectionViewCell, for index: Int) {
+        let product = RealmService.shared.getDataFromDB() [index] as Product
+        cell.displayproductName(name: product.name)
+        cell.displayProductDescription(description: product.descriptions)
+        cell.displayproductPrice(Price: "$\(product.Price)")
+    }
 
     
     func didSelectRow(index: Int) {
+        let product = RealmService.shared.getDataFromDB() [index] as Product
+        view?.presentProductDetailsScreen(product: product)
 
+    }
+    
+    func addNewProduct(){
+        view?.ShowAddNewProductScreen()
+    }
+    
+    func filterProduct() {
+        view?.ShowFilterProductScreen()
     }
     
 }

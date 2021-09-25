@@ -8,22 +8,38 @@
 import UIKit
 
 class FilterProductsViewController: UIViewController {
-
+    
+    @IBOutlet weak var mainView: UIView!
+    
+    var filterProductPresenter: FilterProductPresenter?
+    weak var  storeProductsViewController: StoreProductsViewController?
+    var product = Product()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        filterProductPresenter = FilterProductPresenter(view: self)
+        filterProductPresenter?.viewDidLoad()
+
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction private func filterProductButtonWasPressed(_ sender: Any) {
+        self.dismiss(animated: false, completion: nil)
+        
     }
-    */
+    
+    @IBAction private func resetProductButtonWasPressed(_ sender: Any) {
+        self.dismiss(animated: false, completion: nil)
+        
+    }
+  
+}
 
+extension FilterProductsViewController : FilterProductView {
+    func setupViews(product: Product) {
+        addBlurinng()
+        mainView.roundCornersWithMask([.topLeading ,.topTrailing], radius: 51)
+
+    }
 }

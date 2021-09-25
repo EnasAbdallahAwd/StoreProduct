@@ -24,13 +24,14 @@ final class Product: Object {
     @objc dynamic var name = ""
     @objc dynamic var descriptions = ""
     @objc dynamic var Price = ""
-   // @objc dynamic var image : Data?
+  //  @objc dynamic var Pimage : UIImage? = nil
 
     convenience  init(name:String ,descriptions:String ,Price:String ) {
         self.init()
         self.name = name
         self.descriptions = descriptions
         self.Price = Price
+      //  self.Pimage = Pimage
     }
 
 }
