@@ -1,2 +1,1 @@
-# syankom-ios
 # StoreProject-ios
