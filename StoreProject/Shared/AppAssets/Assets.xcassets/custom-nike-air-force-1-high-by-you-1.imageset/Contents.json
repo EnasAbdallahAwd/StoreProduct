@@ -1,0 +1,15 @@
+{
+  "images" : [
+    {
+      "filename" : "custom-nike-air-force-1-high-by-you-1.pdf",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  },
+  "properties" : {
+    "preserves-vector-representation" : true
+  }
+}
